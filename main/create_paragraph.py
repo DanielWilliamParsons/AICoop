@@ -1,17 +1,16 @@
-import json
-import requests
+
 import random
-from AICoop.AICoop.agents.Blackboard import Blackboard
-from AICoop.AICoop.agents.decomposer_agent import DecomposerAgent
-from AICoop.AICoop.agents.topic_agent import TopicAgent
-from AICoop.AICoop.agents.paragraph_agent import ParagraphAgent
-from AICoop.AICoop.agents.editor_agent import EditorAgent
+from AICoop.agents.Blackboard import Blackboard
+from AICoop.agents.decomposer_agent import DecomposerAgent
+from AICoop.agents.topic_agent import TopicAgent
+from AICoop.agents.paragraph_agent import ParagraphAgent
+from AICoop.agents.editor_agent import EditorAgent
 
 def choose_next_agent(agent,agents, graph):
     edges = graph.get(agent.name, {})
     if not edges:
         return None
-    names, probs = zip(*edges.items())
+    names, probs = zip(*edges.items()) # Separate key-value pairs into two parallel tuples, e.g., [("ParagraphAgent", "EditorAgent"), (0.8, 0.2)]
     chosen = random.choices(names, weights=probs, k = 1)[0]
     return agents[chosen]
 
@@ -29,11 +28,11 @@ def main():
     agents = {
         "DecomposerAgent": DecomposerAgent("DecomposerAgent", graph, bb),
         "TopicAgent": TopicAgent("TopicAgent", graph, bb),
-        "Paragraph": ParagraphAgent("ParagraphAgent", graph, bb),
-        "Editor": EditorAgent("EditorAgent", graph, bb)
+        "ParagraphAgent": ParagraphAgent("ParagraphAgent", graph, bb),
+        "EditorAgent": EditorAgent("EditorAgent", graph, bb)
     }
 
-    bb.write(task)
+    bb.write(task, "User")
 
     for step in range(10):
         agent = random.choice(list(agents.values()))

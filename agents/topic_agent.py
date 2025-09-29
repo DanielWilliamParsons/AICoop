@@ -1,13 +1,13 @@
 import json
 import requests
-from AICoop.AICoop.agents.BaseAgent import BaseAgent
-from AICoop.AICoop.agents.Blackboard import Blackboard
+from AICoop.agents.BaseAgent import BaseAgent
+from AICoop.agents.Blackboard import Blackboard
 
 class TopicAgent(BaseAgent):
     """
     This agent receives instructions from the decomposer and suggests vocabulary, grammar and discourse for other agents
     """
-    def __init__(self, name, graph, blackboard):
+    def __init__(self, name, graph, blackboard: Blackboard):
         """
         Initialize the topic agent
         """

@@ -1,4 +1,4 @@
-from AICoop.AICoop.agents.Blackboard import Blackboard
+from AICoop.agents.Blackboard import Blackboard
 
 class BaseAgent:
     def __init__(self, name, graph, blackboard: Blackboard):
@@ -10,7 +10,7 @@ class BaseAgent:
         """
         Agent notes the blackboard state and reacts to the state
         """
-        print("Agent will note the blackboard and react to the state")
+        print(f"My name is {self.name} and I am studying the blackboard.")
 
     def send_direct(self, message, recipient):
         """
@@ -19,6 +19,6 @@ class BaseAgent:
         print(f"{self.name} -> {recipient.name}: {message}")
         recipient.receive_direct(message, self)
 
-    def received_direct(self, message, sender):
+    def receive_direct(self, message, sender):
         print(f"{self.name} received from {sender.name}: {message}")
         self.blackboard.write(f"(from {sender.name}) {message}", self.name)

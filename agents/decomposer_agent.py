@@ -1,7 +1,7 @@
 import json
 import requests
-from AICoop.AICoop.agents.BaseAgent import BaseAgent
-from AICoop.AICoop.agents.Blackboard import Blackboard
+from AICoop.agents.BaseAgent import BaseAgent
+from AICoop.agents.Blackboard import Blackboard
 
 class DecomposerAgent(BaseAgent):
     """
