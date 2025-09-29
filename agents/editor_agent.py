@@ -1,16 +1,18 @@
 import json
 import requests
 from AICoop.AICoop.agents.BaseAgent import BaseAgent
+from AICoop.AICoop.agents.Blackboard import Blackboard
 
 class EditorAgent(BaseAgent):
     """
     This agent receives instructions from other agents that help it to edit the given paragraph.
     """
-    def __init__(self):
+    def __init__(self, name, graph, blackboard: Blackboard):
         """
         Initialize the editor agent
         """
         print("Initialize the editor agent")
+        super().__init__(name, graph, blackboard)
 
     def _send_request(self, payload, agent_type, temperature=0.001, n_predict=128):
         try:

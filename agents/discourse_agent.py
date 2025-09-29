@@ -1,16 +1,18 @@
 import json
 import requests
 from AICoop.AICoop.agents.BaseAgent import BaseAgent
+from AICoop.AICoop.agents.Blackboard import Blackboard
 
 class DiscourseAgent(BaseAgent):
     """
     This agent checks discourse patterns in a paragraph and instructs the Editor agent
     """
-    def __init__(self):
+    def __init__(self, name, graph, blackboard: Blackboard):
         """
         Initialize the discourse agent
         """
         print("Initialize the discourse agent.")
+        super().__init__(name, graph, blackboard)
 
     def _send_request(self, payload, agent_type, temperature=0.001, n_predict=128):
         try:

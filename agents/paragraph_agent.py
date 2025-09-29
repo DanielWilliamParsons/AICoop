@@ -1,16 +1,18 @@
 import json
 import requests
 from AICoop.AICoop.agents.BaseAgent import BaseAgent
+from AICoop.AICoop.agents.Blackboard import Blackboard
 
 class ParagraphAgent(BaseAgent):
     """
     This agent generates a paragraph based on instructions from other agents
     """
-    def __init__(self):
+    def __init__(self, name, graph, blackboard: Blackboard):
         """
         Initialize the paragraph agent
         """
         print("Initialize the paragraph agent.")
+        super().__init__(name, graph, blackboard)
 
     def _send_request(self, payload, agent_type, temperature=0.001, n_predict=128):
         try:

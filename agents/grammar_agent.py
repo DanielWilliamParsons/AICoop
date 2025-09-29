@@ -1,16 +1,18 @@
 import json
 import requests
 from AICoop.AICoop.agents.BaseAgent import BaseAgent
+from AICoop.AICoop.agents.Blackboard import Blackboard
 
 class GrammarAgent(BaseAgent):
     """
     This agent checks the grammar used in the paragraph and sends instructions to the editor
     """
-    def __init__(self):
+    def __init__(self, name, graph, blackboard: Blackboard):
         """
         Initialize the grammar agent
         """
         print("Initialize the grammar agent.")
+        super().__init__(name, graph, blackboard)
 
     def _send_request(self, payload, agent_type, temperature=0.001, n_predict=128):
         try:

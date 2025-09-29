@@ -1,15 +1,17 @@
 import json
 import requests
 from AICoop.AICoop.agents.BaseAgent import BaseAgent
+from AICoop.AICoop.agents.Blackboard import Blackboard
 
 class VocabularyAgent(BaseAgent):
     """
     This agent generates vocabulary based on instructions from the decomposer agent
     """
-    def __init__(self):
+    def __init__(self, name, graph, blackboard: Blackboard):
         """
         Initialize the vocabulary agent
         """
+        super().__init__(name, graph, blackboard)
         print("Initialize the vocabulary agent.")
 
     def _send_request(self, payload, agent_type, temperature=0.001, n_predict=128):
