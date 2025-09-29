@@ -1,7 +1,8 @@
 import json
 import requests
+from AICoop.AICoop.agents.BaseAgent import BaseAgent
 
-class DecomposerAgent:
+class DecomposerAgent(BaseAgent):
     """
     This agent decomposes the task and creates instructions for other agents
     """

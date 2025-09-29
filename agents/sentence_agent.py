@@ -1,7 +1,8 @@
 import json
 import requests
+from AICoop.AICoop.agents.BaseAgent import BaseAgent
 
-class SentenceAgent:
+class SentenceAgent(BaseAgent):
     """
     This agent checks sentence length and sentence readability and instructs the editor agent
     """

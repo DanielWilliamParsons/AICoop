@@ -1,7 +1,8 @@
 import json
 import requests
+from AICoop.AICoop.agents.BaseAgent import BaseAgent
 
-class ParagraphAgent:
+class ParagraphAgent(BaseAgent):
     """
     This agent generates a paragraph based on instructions from other agents
     """

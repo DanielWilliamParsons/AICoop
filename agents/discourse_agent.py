@@ -1,7 +1,8 @@
 import json
 import requests
+from AICoop.AICoop.agents.BaseAgent import BaseAgent
 
-class DiscourseAgent:
+class DiscourseAgent(BaseAgent):
     """
     This agent checks discourse patterns in a paragraph and instructs the Editor agent
     """

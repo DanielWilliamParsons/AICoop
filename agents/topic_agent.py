@@ -1,7 +1,8 @@
 import json
 import requests
+from AICoop.AICoop.agents.BaseAgent import BaseAgent
 
-class TopicAgent:
+class TopicAgent(BaseAgent):
     """
     This agent receives instructions from the decomposer and suggests vocabulary, grammar and discourse for other agents
     """

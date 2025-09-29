@@ -1,7 +1,8 @@
 import json
 import requests
+from AICoop.AICoop.agents.BaseAgent import BaseAgent
 
-class VocabularyAgent:
+class VocabularyAgent(BaseAgent):
     """
     This agent generates vocabulary based on instructions from the decomposer agent
     """

@@ -1,7 +1,8 @@
 import json
 import requests
+from AICoop.AICoop.agents.BaseAgent import BaseAgent
 
-class EditorAgent:
+class EditorAgent(BaseAgent):
     """
     This agent receives instructions from other agents that help it to edit the given paragraph.
     """

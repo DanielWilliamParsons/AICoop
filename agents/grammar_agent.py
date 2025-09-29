@@ -1,7 +1,8 @@
 import json
 import requests
+from AICoop.AICoop.agents.BaseAgent import BaseAgent
 
-class GrammarAgent:
+class GrammarAgent(BaseAgent):
     """
     This agent checks the grammar used in the paragraph and sends instructions to the editor
     """
